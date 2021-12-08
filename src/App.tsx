@@ -1,6 +1,15 @@
 import './App.module.scss';
 import { AppBar, Container, Paper, Toolbar, Typography } from '@mui/material';
 
+import { WebMidi } from "webmidi";
+
+const initMidi = () => {
+  WebMidi
+    .enable()
+    .then(() => console.log("MIDI enabled"))
+    .catch(err => alert(err));
+};
+
 function App() {
   return (
     <div className="App">
